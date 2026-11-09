@@ -15,8 +15,8 @@
     background-color: var(--primary-color);
     color: var(--secondary-color);
 
-    h1{
-        padding:0;
+    h1, h2, h3, h4, h5, h6, p, a, span, ul, li{
+        margin: 0;
     }
 }
 
@@ -34,27 +34,34 @@ body{
 .grid{
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    gap: var(--md);
+    column-gap: var(--md);
+    row-gap: var(--lg);
     width: 100%;
 }
 
 .main{
-    padding: var(--sm) var(--lg);
+    padding: var(--sm) var(--xl);
     box-sizing: border-box;
 }
 
 .fullSpan{
     grid-column: span 12;
 }
-.halfSpan{
-    grid-column: span 6;
+.halfSpanLeft{
+    grid-column: span 5;
 }
 
+.halfSpanRight{
+    grid-column: 7/13;
+}
+
+
+/* Header styles */
 
 .header{
     position: sticky;
     top: 0;
-    padding: var(--sm) var(--lg);
+    padding: var(--sm) var(--xl);
     display: flex;
     flex-direction: column;
     gap: var(--sm);
@@ -130,7 +137,58 @@ a.highlight{
     color: var(--quinary-color);
 }
 
+
+/* Device Info Section */
+
 .deviceInfo{
     display: flex;
     flex-direction: row;
 }
+
+.description{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: var(--lg);
+}
+
+
+/* thumbnail image and price tag using subgrid template */
+.thumbnailContainer{
+    display: grid;
+    grid-template-columns: subgrid;
+}
+
+.thumbnailImage{
+    grid-column: 1/-1;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* -3/-1 positions the tag to span the last 2 columns */
+
+.priceTag{
+    grid-column: -3/-1;
+    grid-row: 1;
+    justify-self: end;
+    align-self: end;
+    margin-bottom: var(--sm);
+    margin-right: var(--sm);
+    display: flex;
+    flex-direction: column;
+    z-index: 200;
+    padding: var(--sm) var(--md);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--primary-color);
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--xs);
+    backdrop-filter: blur(var(--xs));
+}
+
+.price{
+    font-size: var(--lg);
+}
+
