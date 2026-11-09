@@ -11,11 +11,16 @@
     --lg: 2.5rem;
     --xl: 3.5rem;
     font-family: Arial, sans-serif;
-    line-height: 1.5;
     background-color: var(--primary-color);
     color: var(--secondary-color);
 
-    h1, h2, h3, h4, h5, h6, p, a, span, ul, li{
+    h1, h2, h3, h4, h5, h6{
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    p,a,span, ul, li{
+        line-height: 1.5;
         margin: 0;
     }
 }
@@ -49,10 +54,22 @@ body{
 }
 .halfSpanLeft{
     grid-column: span 5;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
 }
 
 .halfSpanRight{
     grid-column: 7/13;
+        display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+}
+
+.textBlock{
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
 }
 
 
@@ -168,7 +185,6 @@ a.highlight{
 }
 
 /* -3/-1 positions the tag to span the last 2 columns */
-
 .priceTag{
     grid-column: -3/-1;
     grid-row: 1;
@@ -190,5 +206,20 @@ a.highlight{
 
 .price{
     font-size: var(--lg);
+}
+
+/* Maker info section */
+
+.makerInfo{
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+}
+
+.informationGrid{
+    display:grid;
+    grid-template-columns: subgrid;
+    row-gap: var(--md);
+    column-gap: var(--lg);
 }
 
