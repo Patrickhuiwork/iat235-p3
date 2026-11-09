@@ -1,0 +1,121 @@
+
+:root{
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    --tertiary-color: #B3B3B3;
+    --quaternary-color: #4D4D4D;
+    --quinary-color: #5050FF;
+    --xs: .25rem;
+    --sm: .75rem;
+    --md: 1.5rem;
+    --lg: 2.5rem;
+    --xl: 3.5rem;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: var(--md);
+    width: 100%;
+}
+
+.main{
+    padding: var(--sm) var(--lg);
+    box-sizing: border-box;
+}
+
+.fullSpan{
+    grid-column: span 12;
+}
+.halfSpan{
+    grid-column: span 6;
+}
+
+
+.header{
+    position: sticky;
+    top: 0;
+    padding: var(--sm) var(--lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+    background-color: var(--primary-color);
+    z-index: 100;
+}
+
+.header .grid{
+    align-items: center;
+}
+
+.homeLinks{
+    grid-column: 1 / 5;
+}
+.navLinks{
+    grid-column: 5 / 9;
+}
+
+.homeLinks:hover{
+    transition: all 0.3s ease-in-out;
+    color: var(--quinary-color);
+}
+
+.navLinks:hover{
+    transition: all 0.3s ease-in-out;
+    color: var(--quinary-color);
+}
+
+.searchBar{
+    grid-column: 9 / 13;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--xl);
+    color: var(--quaternary-color);
+    padding: var(--sm) var(--md);
+    gap: var(--sm);
+}
+
+.searchInput{
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.searchButton{
+    background-color:grey ;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    color: var(--quaternary-color);
+    cursor: pointer;
+    width: var(--md);
+    height: var(--md);
+    border-radius: 50%;
+}
+
+.breadCrumbs{
+    color: var(--quinary-color);
+    gap: var(--xs);
+    text-decoration: none;
+}
+
+.deviceInfo{
+    display: flex;
+    flex-direction: row;
+}
