@@ -14,6 +14,10 @@
     line-height: 1.5;
     background-color: var(--primary-color);
     color: var(--secondary-color);
+
+    h1{
+        padding:0;
+    }
 }
 
 a{
@@ -67,6 +71,8 @@ body{
 }
 .navLinks{
     grid-column: 5 / 9;
+    justify-content: center;
+    display: flex;
 }
 
 .homeLinks:hover{
@@ -94,25 +100,34 @@ body{
     border: none;
     outline: none;
     width: 100%;
+    font-size: var(--sm);
 }
 
 .searchButton{
-    background-color:grey ;
     align-items: center;
     justify-content: center;
     text-align: center;
     border: none;
     color: var(--quaternary-color);
     cursor: pointer;
+    aspect-ratio: 1/1;
     width: var(--md);
     height: var(--md);
-    border-radius: 50%;
+}
+
+.searchButton img{
+    width: var(--md);
+    height: var(--md);
 }
 
 .breadCrumbs{
-    color: var(--quinary-color);
+    color: var(--quaternary-color);
     gap: var(--xs);
     text-decoration: none;
+}
+
+a.highlight{
+    color: var(--quinary-color);
 }
 
 .deviceInfo{
