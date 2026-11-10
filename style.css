@@ -28,6 +28,7 @@
         line-height: 1.2;
         margin: 0;
         font-weight: 400;
+        text-wrap: balance;
     }
 
     h1 {
@@ -71,6 +72,53 @@
         --fs-md: 1.0rem;
         --fs-sm: 0.75rem;
         --fs-xs: 0.5rem;
+
+        .main.grid{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .thumbnailContainer{
+            order: -1;
+        }
+
+        .toolsNeeded{
+            order: 2;
+        }
+        .skillsNeeded{
+            order: 2;
+        }
+
+        .header{
+            display: flex;
+            flex-direction: column;
+            gap: var(--md);
+            padding-top: var(--md);
+        }
+        
+        .headerGrid{
+            row-gap: var(--md);
+        }
+
+        .homeLinks{
+            grid-column: 1/7
+        }
+
+        .navLinks{
+            grid-column: 7/13;
+            justify-content: flex-end;
+        }
+
+        .searchBar{
+            grid-column: 1/-1;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .instructionsButton{
+            width: 100%;
+            text-align: center;
+        }
     }
 }
 
@@ -94,9 +142,19 @@ body {
     width: 100%;
 }
 
+.headerGrid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--md);
+    row-gap: var(--lg);
+    width: 100%;
+}
+
+
 .main {
     padding: var(--sm) var(--xl);
     box-sizing: border-box;
+    padding-bottom: var(--xl);
 }
 
 .fullSpan {
@@ -145,7 +203,7 @@ body {
     gap: var(--md);
 }
 
-.button {
+.button,.instructionsButton {
     padding: var(--xs) var(--sm);
     border: none;
     border-radius: var(--xl);
@@ -158,6 +216,13 @@ body {
     font-style: italic;
 }
 
+.instructionsButton:hover {
+    transition: all 0.3s ease-in-out;
+    background-color: var(--quinary-color);
+    color: var(--primary-color);
+    border: 2px solid var(--quinary-color);
+}
+
 .button:hover {
     transition: all 0.3s ease-in-out;
     background-color: var(--quinary-color);
@@ -166,6 +231,10 @@ body {
 }
 
 .button:focus {
+    border: 2px solid var(--secondary-color);
+}
+
+.instructionsButton:focus {
     border: 2px solid var(--secondary-color);
 }
 
@@ -183,7 +252,7 @@ body {
     z-index: 300;
 }
 
-.header .grid {
+.header .headerGrid {
     align-items: center;
 }
 
@@ -246,6 +315,8 @@ body {
     color: var(--tertiary-color);
     gap: var(--xs);
     text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 a.highlight {
@@ -317,12 +388,12 @@ a.highlight {
         flex-direction: row;
         gap: var(--lg);
         align-items: center;
-        font-size: var(--fs-lg);
+        font-size: var(--fs-xl);
+        p{
+            font-size: var(--fs-xl);
+        }
     }
 
-    p{
-        font-size: var(--fs-lg);
-    }
 }
 
 /* Maker info section */
@@ -330,7 +401,7 @@ a.highlight {
 .makerInfo {
     display: flex;
     flex-direction: column;
-    gap: var(--sm);
+    gap: var(--md);
 }
 
 .informationGrid {
@@ -351,7 +422,10 @@ a.highlight {
     flex-direction: row;
     align-items: center;
     gap: var(--lg);
-
+    @media (max-width:768px) {
+        justify-content: center;
+        gap: var(--xl);
+    }
 }
 
 .timeInfo div {
@@ -368,6 +442,15 @@ a.highlight {
 
 .cardImage {
     border-radius: calc(var(--xs) + var(--sm));
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.imageLink {
+    height:100%;
+    display: block;
 }
 
 .cardLayout {
@@ -380,11 +463,12 @@ a.highlight {
 .itemCard {
     display: flex;
     flex-direction: column;
-    gap: var(--sm);
+    gap: var(--md);
 }
 
 .itemCard h2 {
     font-size: var(--fs-md);
+        padding: 0 var(--sm);
 }
 
 .cardInfo {
@@ -392,8 +476,12 @@ a.highlight {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+      padding: 0 var(--sm);
+              padding-bottom: var(--sm);
+
 }
 
 .cardInfo p {
     font-size: var(--fs-lg);
+    
 }
