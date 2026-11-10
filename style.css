@@ -1,81 +1,148 @@
+*{
+    border: 1px solid red;
+}
 
-:root{
+:root {
     --primary-color: #ffffff;
     --secondary-color: #000000;
     --tertiary-color: #B3B3B3;
     --quaternary-color: #4D4D4D;
     --quinary-color: #5050FF;
-    --xs: .25rem;
-    --sm: .75rem;
+    --xs: .5rem;
+    --sm: 1rem;
     --md: 1.5rem;
     --lg: 2.5rem;
     --xl: 3.5rem;
+    --fs-2xl: 4.222rem;
+    --fs-xl: 2.611rem;
+    --fs-lg: 1.618rem;
+    --fs-md: 1.0rem;
+    --fs-sm: 0.618rem;
+    --fs-xs: 0.382rem;
     font-family: Arial, sans-serif;
     background-color: var(--primary-color);
     color: var(--secondary-color);
 
-    h1, h2, h3, h4, h5, h6{
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         line-height: 1.2;
         margin: 0;
+        font-weight: 400;
     }
 
-    p,a,span, ul, li{
+    h1{
+        font-size: var(--fs-2xl);
+    }
+
+    h2{
+        font-size: var(--fs-xl);
+    }
+
+    h3{
+        font-size: var(--fs-lg);
+    }
+
+    p{
+        font-size: var(--fs-md);
+    }
+
+
+
+    p,
+    a,
+    span,
+    ul,
+    li {
         line-height: 1.5;
         margin: 0;
     }
+    
 }
 
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
 
-
-body{
+body {
     margin: 0;
     padding: 0;
+    font-family: 'Fira Sans', sans-serif;
 }
 
-.grid{
+.grid {
     display: grid;
-    grid-template-columns: repeat(12,1fr);
+    grid-template-columns: repeat(12, 1fr);
     column-gap: var(--md);
     row-gap: var(--lg);
     width: 100%;
 }
 
-.main{
+.main {
     padding: var(--sm) var(--xl);
     box-sizing: border-box;
 }
 
-.fullSpan{
+.fullSpan {
     grid-column: span 12;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
 }
-.halfSpanLeft{
+
+.halfSpan {
+    grid-column: span 6;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+}
+
+.halfSpanLeft {
     grid-column: span 5;
     display: flex;
     flex-direction: column;
     gap: var(--sm);
 }
 
-.halfSpanRight{
+.halfSpanRight {
     grid-column: 7/13;
-        display: flex;
-    flex-direction: column;
-    gap: var(--sm);
-}
-
-.textBlock{
     display: flex;
     flex-direction: column;
     gap: var(--sm);
 }
 
+.textBlock {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+}
+
+.button {
+    padding: var(--xs) var(--sm);
+    border: none;
+    border-radius: var(--xl);
+    background-color: var(--primary-color);
+    color: var(--quinary-color);
+    border: 2px solid var(--tertiary-color);
+    cursor: pointer;
+    font-size: var(--fs-md);
+    width: fit-content;
+}
+
+.button:hover {
+    transition: all 0.3s ease-in-out;
+    background-color: var(--quinary-color);
+    color: var(--primary-color);
+}
+
 
 /* Header styles */
 
-.header{
+.header {
     position: sticky;
     top: 0;
     padding: var(--sm) var(--xl);
@@ -83,33 +150,34 @@ body{
     flex-direction: column;
     gap: var(--sm);
     background-color: var(--primary-color);
-    z-index: 100;
+    z-index: 300;
 }
 
-.header .grid{
+.header .grid {
     align-items: center;
 }
 
-.homeLinks{
+.homeLinks {
     grid-column: 1 / 5;
 }
-.navLinks{
+
+.navLinks {
     grid-column: 5 / 9;
     justify-content: center;
     display: flex;
 }
 
-.homeLinks:hover{
+.homeLinks:hover {
     transition: all 0.3s ease-in-out;
     color: var(--quinary-color);
 }
 
-.navLinks:hover{
+.navLinks:hover {
     transition: all 0.3s ease-in-out;
     color: var(--quinary-color);
 }
 
-.searchBar{
+.searchBar {
     grid-column: 9 / 13;
     display: flex;
     align-items: center;
@@ -120,14 +188,14 @@ body{
     gap: var(--sm);
 }
 
-.searchInput{
+.searchInput {
     border: none;
     outline: none;
     width: 100%;
-    font-size: var(--sm);
+    font-size: var(--fs-md);
 }
 
-.searchButton{
+.searchButton {
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -139,30 +207,30 @@ body{
     height: var(--md);
 }
 
-.searchButton img{
+.searchButton img {
     width: var(--md);
     height: var(--md);
 }
 
-.breadCrumbs{
+.breadCrumbs {
     color: var(--quaternary-color);
     gap: var(--xs);
     text-decoration: none;
 }
 
-a.highlight{
+a.highlight {
     color: var(--quinary-color);
 }
 
 
 /* Device Info Section */
 
-.deviceInfo{
+.deviceInfo {
     display: flex;
     flex-direction: row;
 }
 
-.description{
+.description {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -171,12 +239,14 @@ a.highlight{
 
 
 /* thumbnail image and price tag using subgrid template */
-.thumbnailContainer{
+.thumbnailContainer {
     display: grid;
-    grid-template-columns: subgrid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: var(--md);
+    row-gap: var(--lg);
 }
 
-.thumbnailImage{
+.thumbnailImage {
     grid-column: 1/-1;
     grid-row: 1;
     width: 100%;
@@ -184,11 +254,9 @@ a.highlight{
     object-fit: cover;
 }
 
-/* -3/-1 positions the tag to span the last 2 columns */
-.priceTag{
-    grid-column: -3/-1;
+.priceTag {
+    grid-column: 5/7;
     grid-row: 1;
-    justify-self: end;
     align-self: end;
     margin-bottom: var(--sm);
     margin-right: var(--sm);
@@ -204,22 +272,63 @@ a.highlight{
     backdrop-filter: blur(var(--xs));
 }
 
-.price{
-    font-size: var(--lg);
+.price {
+    font-size: var(--fs-lg);
 }
 
 /* Maker info section */
 
-.makerInfo{
+.makerInfo {
     display: flex;
     flex-direction: column;
     gap: var(--sm);
 }
 
-.informationGrid{
-    display:grid;
-    grid-template-columns: subgrid;
-    row-gap: var(--md);
-    column-gap: var(--lg);
+.informationGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--md);
+    row-gap: var(--lg);
 }
 
+.timeInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.timeInfo section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time{
+    font-size: var(--fs-lg);
+}
+
+/* Suggested devices */
+
+.cardLayout {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--md);
+    row-gap: var(--lg);
+}
+
+.itemCard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priceRange {
+    font-size: var(--fs-md);
+}

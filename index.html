@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P3:HTML/CSS</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -36,7 +41,7 @@
         <section class="description halfSpanLeft">
             <div class="textBlock">
                 <h1>
-                    Knife Guide Arthritis Aid
+                    Knife Guide <br> Arthritis Aid
                 </h1>
                 <p>
                     An assistive device that enables users to write or draw without having to form a tight closed grip
@@ -73,10 +78,18 @@
         <section class="makerInfo fullSpan">
             <h2>Information for Makers</h2>
             <div class="informationGrid">
-                <section class="printTime halfSpanLeft">
-                    <h3>Print Time</h3>
-                    <p>3.0 hrs</p>
-                    <p>Assembly Time: 0.5 hrs</p>
+                <section class="timeRanges halfSpanLeft">
+                    <h3>Print and Assembly Time</h3>
+                    <div class="timeInfo halfSpanLeft">
+                        <section>
+                            <p class="time">3.0 hrs</p>
+                            <p>Print Time</p>
+                        </section>
+                        <section>
+                            <p class="time"> 0.5 hrs</p>
+                            <p>Assembly Time</p>
+                        </section>
+                    </div>
                 </section>
                 <section class="toolsNeeded halfSpanRight">
                     <h3>Tools Needed</h3>
@@ -89,8 +102,30 @@
                 <section class="buildInstructions halfSpanRight">
                     <h3>Build Instructions</h3>
                     <p>For full assembly instructions please refer to the Assembly Guide, or visit the document at</p>
-                    <a href="#" class="Button">View Full Build Instructions</a>
+                    <a href="#" class="button">View Full Build Instructions</a>
                 </section>
+            </div>
+        </section>
+        <section class="suggestedDevices fullSpan">
+            <h2>Suggested Devices</h2>
+            <div class="cardLayout">
+                <article class="itemCard halfSpan">
+                    <img class="cardImage" src="assets/placeholder.png" alt="DRAG Assistive Writing and Drawing Device">
+                    <p>DRAG Assistive Writing and Drawing Device</p>
+                    <div class="cardInfo">
+                        <p class="priceRange">$0 - 10</p>
+                        <a href="#" class="button">View Device Info</a>
+                    </div>
+                </article>
+                <article class="itemCard halfSpan">
+                    <img class="cardImage" src="assets/placeholder.png"
+                        alt="Adaptive Utensil Handles for IKEA IDENTITET">
+                    <p>Adaptive Utensil Handles for IKEA IDENTITET</p>
+                    <div class="cardInfo">
+                        <p class="priceRange">$11 - 25</p>
+                        <a href="#" class="button">View Device Info</a>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
@@ -101,105 +136,3 @@
 </body>
 
 </html>
-
-<!--
-    <main class="12colgrid devicePage">
-        <section class="deviceInfo">
-            <div class="description">
-                <h1>
-                  Knife Guide Arthritis Aid  
-                </h1>
-
-                <div class="textBlock">
-                    <h3>Purpose</h3>
-                    <p>
-                      The Knife Guide Arthritis Aid is a handle that attaches to the back of a knife that allows a user to use both hands and requires less grip strength for the same amount of control.
-                    </p>
-                </div>
-            </div>
-            <div class="thumbnailContainer">
-                <div class="priceTag">
-                    <p>Cost Estimate</p>
-                    <p>$0 - 10</p>
-                </div>
-                <img
-                class="thumbnailImage"
-                src="placeholder"
-                alt="Knife Guide Arthritis Aid"
-                >
-            </div>
-            <div class="additionalInfo">
-                <section class="textBlock">
-                    <h3>How to Use</h3>
-                    <p>To use, place the device over the back of the knife. The new handle can now be gripped at a more natural angle than the original handle, and the knife used as normal. However, at least one hand must remain on the original handle during use. Attempting to hold the knife with just the new handle could cause the knife to fall out of the handle.</p>
-                </section>
-                <section class="textBlock">
-                    <h3>Disability Type</h3>
-                    <p>This device is intended to support people with arthritis when cutting with a larger kitchen knife.</p>
-                </section>
-            </div>
-        </section>
-        <section class="makerInfo">
-            <h2>Information for Makers</h2>
-            <div class="informationGrid">
-                <div class="gridItem">
-                    <h4>Print Time</h4>
-                    <div class="printTime">
-                        <div class="timeBlock">
-                            <p>3.0<span>hrs</span></p>
-                            <p>Print Time</p>
-                        </div>
-                        <div class="timeBlock">
-                            <p>0.5<span>hrs</span></p>
-                            <p>Assembly Time</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="gridItem">
-                    <h4>Tools Needed</h4>
-                    <p>3D Printer, Common Hand Tools</p>
-                </div>
-                <div class="gridItem">
-                    <h4>Skills Required</h4>
-                    <p>Basic 3D printing skills, basic assembly skills</p>
-                </div>
-                <div class="gridItem">
-                    <h4>Build Instructions</h4>
-                    <p>For full assembly instructions please refer to the Assembly Guide, or visit the document at</p>
-                    <a href="#" class="Button">View Full Build Instructions</a>
-                </div>
-            </div>
-        </section>
-        <section class="suggestedDevices">
-            <H2>Suggested Devices</H2>
-            <div class="cardLayout">
-                <div class="itemCard">
-                    <img
-                    class="cardImage"
-                    src="placeholder"
-                    alt="DRAG Assistive Writing and Drawing Device"
-                    >
-                    <p>DRAG Assistive Writing and Drawing Device</p>
-                    <div class="cardInfo">
-                        <p>$0 - 10</p>
-                        <a href=# class="cardButton">View Device Info</a>
-                    </div>
-                </div>
-                <div class="itemCard">
-                    <img
-                    class="cardImage"
-                    src="placeholder"
-                    alt="Adaptive Utensil Handles for IKEA IDENTITET"
-                    >
-                    <p>Adaptive Utensil Handles for IKEA IDENTITET</p>
-                    <div class="cardInfo">
-                        <p>$11 - 25</p>
-                        <a href=# class="cardButton">View Device Info</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-    </main>
--->
