@@ -1,6 +1,4 @@
-*{
-    border: 1px solid red;
-}
+
 
 :root {
     --primary-color: #ffffff;
@@ -137,6 +135,11 @@ body {
     transition: all 0.3s ease-in-out;
     background-color: var(--quinary-color);
     color: var(--primary-color);
+    border: 2px solid var(--quinary-color);
+}
+
+.button:focus {
+    border: 2px solid var(--secondary-color);
 }
 
 
@@ -213,7 +216,7 @@ body {
 }
 
 .breadCrumbs {
-    color: var(--quaternary-color);
+    color: var(--tertiary-color);
     gap: var(--xs);
     text-decoration: none;
 }
@@ -252,6 +255,7 @@ a.highlight {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: calc(var(--xs) + var(--sm));
 }
 
 .priceTag {
@@ -272,8 +276,8 @@ a.highlight {
     backdrop-filter: blur(var(--xs));
 }
 
-.price {
-    font-size: var(--fs-lg);
+.priceTag p{
+    font-size: var(--fs-xl);
 }
 
 /* Maker info section */
@@ -295,19 +299,24 @@ a.highlight {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: var(--lg);
 }
 
-.timeInfo section{
+.timeInfo div{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.time{
-    font-size: var(--fs-lg);
+.time p{
+    font-size: var(--fs-xl);
 }
 
 /* Suggested devices */
+
+.cardImage{
+    border-radius: calc(var(--xs) + var(--sm));
+}
 
 .cardLayout {
     display: grid;
@@ -322,6 +331,10 @@ a.highlight {
     gap: var(--sm);
 }
 
+.itemCard h2{
+    font-size: var(--fs-md);
+}
+
 .cardInfo {
     display: flex;
     flex-direction: row;
@@ -329,6 +342,6 @@ a.highlight {
     align-items: center;
 }
 
-.priceRange {
-    font-size: var(--fs-md);
+.cardInfo p {
+    font-size: var(--fs-lg);
 }
