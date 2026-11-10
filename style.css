@@ -1,4 +1,7 @@
 :root {
+
+    /* defined css variables for colors, spacing, and font sizes */
+
     --primary-color: #ffffff;
     --secondary-color: #000000;
     --tertiary-color: #B3B3B3;
@@ -59,6 +62,9 @@
     }
 
 
+
+    /* Media query for mobile devices */
+
     @media (max-width:768px) {
 
         --xs: .25rem;
@@ -73,49 +79,52 @@
         --fs-sm: 0.75rem;
         --fs-xs: 0.5rem;
 
-        .main.grid{
+        .main.grid {
             display: flex;
             flex-direction: column;
         }
 
-        .thumbnailContainer{
+        /* Reorder elements for mobile view */
+
+        .thumbnailContainer {
             order: -1;
         }
 
-        .toolsNeeded{
-            order: 2;
-        }
-        .skillsNeeded{
+        .toolsNeeded {
             order: 2;
         }
 
-        .header{
+        .skillsNeeded {
+            order: 2;
+        }
+
+        .header {
             display: flex;
             flex-direction: column;
             gap: var(--md);
             padding-top: var(--md);
         }
-        
-        .headerGrid{
+
+        .headerGrid {
             row-gap: var(--md);
         }
 
-        .homeLinks{
+        .homeLinks {
             grid-column: 1/7
         }
 
-        .navLinks{
+        .navLinks {
             grid-column: 7/13;
             justify-content: flex-end;
         }
 
-        .searchBar{
+        .searchBar {
             grid-column: 1/-1;
             width: 100%;
             box-sizing: border-box;
         }
 
-        .instructionsButton{
+        .instructionsButton {
             width: 100%;
             text-align: center;
         }
@@ -142,7 +151,7 @@ body {
     width: 100%;
 }
 
-.headerGrid{
+.headerGrid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     column-gap: var(--md);
@@ -203,7 +212,10 @@ body {
     gap: var(--md);
 }
 
-.button,.instructionsButton {
+/* Button styles */
+
+.button,
+.instructionsButton {
     padding: var(--xs) var(--sm);
     border: none;
     border-radius: var(--xl);
@@ -371,6 +383,8 @@ a.highlight {
     border-radius: var(--xs);
     backdrop-filter: blur(var(--xs));
 
+    /* Hide the overlayed price tag on mobile devices */
+
     @media (max-width:768px) {
         display: none;
     }
@@ -380,8 +394,10 @@ a.highlight {
     font-size: var(--fs-xl);
 }
 
-.priceTagMobile{
+.priceTagMobile {
     display: none;
+
+    /* Show the price tag on mobile devices */
 
     @media (max-width:768px) {
         display: flex;
@@ -389,7 +405,8 @@ a.highlight {
         gap: var(--lg);
         align-items: center;
         font-size: var(--fs-xl);
-        p{
+
+        p {
             font-size: var(--fs-xl);
         }
     }
@@ -422,6 +439,7 @@ a.highlight {
     flex-direction: row;
     align-items: center;
     gap: var(--lg);
+
     @media (max-width:768px) {
         justify-content: center;
         gap: var(--xl);
@@ -450,7 +468,7 @@ a.highlight {
 }
 
 .imageLink {
-    height:100%;
+    height: 100%;
     display: block;
 }
 
@@ -473,7 +491,7 @@ a.highlight {
 
 .itemCard h2 {
     font-size: var(--fs-md);
-        padding: 0 var(--sm);
+    padding: 0 var(--sm);
 }
 
 .cardInfo {
@@ -481,13 +499,12 @@ a.highlight {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-      padding: 0 var(--sm);
-              padding-bottom: var(--sm);
+    padding: 0 var(--sm);
+    padding-bottom: var(--sm);
 
 }
 
 .cardInfo p {
     font-size: var(--fs-lg);
-    
-}
 
+}
