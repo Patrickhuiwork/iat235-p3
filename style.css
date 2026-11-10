@@ -127,6 +127,7 @@
         .instructionsButton {
             width: 100%;
             text-align: center;
+            box-sizing: border-box;
         }
     }
 }
