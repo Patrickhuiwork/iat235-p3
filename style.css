@@ -446,11 +446,16 @@ a.highlight {
     height: auto;
     object-fit: cover;
     display: block;
+    transition: filter 0.3s ease-in-out;
 }
 
 .imageLink {
     height:100%;
     display: block;
+}
+
+.imageLink:hover .cardImage {
+    filter: brightness(80%);
 }
 
 .cardLayout {
@@ -485,3 +490,4 @@ a.highlight {
     font-size: var(--fs-lg);
     
 }
+
